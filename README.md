@@ -1,0 +1,1 @@
+# LegalNormRules-Metamodel
