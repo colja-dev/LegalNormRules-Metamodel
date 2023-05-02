@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="LegalNormRules" nsURI="http://www.example.org/LegalNormRules"
+    nsPrefix="LegalNormRules">
+  <eClassifiers xsi:type="ecore:EClass" name="LegalConsequence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="legalobligation" lowerBound="1"
+        upperBound="-1" eType="#//LegalObligation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="prerequisit" lowerBound="1"
+        eType="#//Prerequisit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Prerequisit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LegalObligation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Connector" eSuperTypes="#//Prerequisit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="prerequisit" lowerBound="1"
+        upperBound="2" eType="#//Prerequisit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//Prerequisit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextDependentProperty" eSuperTypes="#//Prerequisit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NOT" eSuperTypes="#//Connector"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AND" eSuperTypes="#//Connector"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OR" eSuperTypes="#//Connector"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LegalNormRules">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="legalconsequence" lowerBound="1"
+        upperBound="-1" eType="#//LegalConsequence" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated LegalNormRules -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="mdpa.lnr.metamodel.LegalNormRules.presentation.LegalNormRulesModelWizardID"
+            name="%_UI_LegalNormRulesModelWizard_label"
+            class="mdpa.lnr.metamodel.LegalNormRules.presentation.LegalNormRulesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/LegalNormRulesModelFile.gif">
+         <description>%_UI_LegalNormRulesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated LegalNormRules -->
+      <editor
+            id="mdpa.lnr.metamodel.LegalNormRules.presentation.LegalNormRulesEditorID"
+            name="%_UI_LegalNormRulesEditor_label"
+            icon="icons/full/obj16/LegalNormRulesModelFile.gif"
+            extensions="legalnormrules"
+            class="mdpa.lnr.metamodel.LegalNormRules.presentation.LegalNormRulesEditor"
+            contributorClass="mdpa.lnr.metamodel.LegalNormRules.presentation.LegalNormRulesActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
