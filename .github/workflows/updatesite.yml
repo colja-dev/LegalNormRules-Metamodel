@@ -37,7 +37,7 @@ jobs:
           external_repository: Model-Based-Data-Protection-Assessments/updatesite
           destination_dir: nightly/legalnormrules-metamodel/
           publish_dir: releng/mdpa.lnr.metamodel.updatesite/target/repository
-          publish_branch: master
+          publish_branch: main
       - name: Publish Release Update Site
         if: github.event_name == 'release' && github.repository_owner == 'Model-Based-Data-Protection-Assessments'
         uses: peaceiris/actions-gh-pages@v3
@@ -46,6 +46,6 @@ jobs:
           external_repository: Model-Based-Data-Protection-Assessments/updatesite
           destination_dir: release/legalnormrules-metamodel/${{ github.event.release.tag_name }}
           publish_dir: releng/mdpa.lnr.metamodel.updatesite/target/repository
-          publish_branch: master
+          publish_branch: main
           
 
