@@ -170,5 +170,6 @@
  <modules>
 	<module>releng</module>
 	<module>bundles</module>
+	<module>features</module>
  </modules>
 </project>

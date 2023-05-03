@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="mdpa.lnr.metamodel.feature">
+      <category name="lnr_metamodel"/>
+   </feature>
+   <category-def name="lnr_metamodel" label="Legal Norm Rules Metamodel"/>
+</site>
