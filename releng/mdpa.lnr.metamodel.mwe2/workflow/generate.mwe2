@@ -12,6 +12,15 @@ Workflow {
 	bean = EclipseRCPSupportingStandaloneSetup {
 		scanClassPath = true
 		platformUri = workspaceRoot
+		
+		uriMap = {
+			from = "platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel"
+			to = "platform:/resource/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel"
+		}
+		uriMap = {
+			from = "platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.ecore"
+			to = "platform:/resource/tools.mdsd.modelingfoundations.identifier/model/identifier.ecore"
+		}
 	}
 
 	component = EcoreGenerator {

@@ -12,5 +12,6 @@ Export-Package: mdpa.lnr.metamodel.LegalNormRules,
  mdpa.lnr.metamodel.LegalNormRules.impl,
  mdpa.lnr.metamodel.LegalNormRules.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ tools.mdsd.modelingfoundations.identifier;visibility:=reexport,
  org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy

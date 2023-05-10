@@ -7,12 +7,13 @@
     editorPluginClass="mdpa.lnr.metamodel.presentation.LegalNormRulesEditorPlugin"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" suppressEMFTypes="true"
     reflectiveDelegation="true" codeFormatting="true" testSuiteClass="mdpa.lnr.metamodel.tests.LegalNormRulesAllTests"
-    importerID="org.eclipse.emf.importer.ecore" featureDelegation="Reflective" complianceLevel="5.0"
-    copyrightFields="false" operationReflection="true" importOrganizing="true">
+    importerID="org.eclipse.emf.importer.ecore" featureDelegation="Reflective" complianceLevel="5.0" copyrightFields="false" 
+    usedGenPackages="../../tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier" 
+    operationReflection="true" importOrganizing="true">
   <foreignModel>LegalNormRules.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="LegalNormRules" basePackage="mdpa.lnr.metamodel" disposableProviderFactory="true"
-      ecorePackage="LegalNormRules.ecore#/">
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="LegalNormRules.ecore#/">
     <genClasses ecoreClass="LegalNormRules.ecore#//LegalConsequence">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LegalNormRules.ecore#//LegalConsequence/legalobligation"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LegalNormRules.ecore#//LegalConsequence/prerequisit"/>

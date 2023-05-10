@@ -3,6 +3,8 @@
   <viewpoint:DAnalysis uid="_tRJMsOUWEe2DF-bjTK-2JA" selectedViews="_tTCqIOUWEe2DF-bjTK-2JA" version="15.0.0.202209061200">
     <semanticResources>LegalNormRules.ecore</semanticResources>
     <semanticResources>LegalNormRules.genmodel</semanticResources>
+    <semanticResources>platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.ecore</semanticResources>
+    <semanticResources>platform:/resource/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_tTCqIOUWEe2DF-bjTK-2JA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tTsKYOUWEe2DF-bjTK-2JA" name="LegalNormRules" repPath="#_tTpHEOUWEe2DF-bjTK-2JA" changeId="2f567fa7-7a23-40d7-ad7d-82a131febbb1">
