@@ -5,6 +5,11 @@
     <semanticResources>LegalNormRules.genmodel</semanticResources>
     <semanticResources>platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.ecore</semanticResources>
     <semanticResources>platform:/resource/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel</semanticResources>
+    <semanticResources>platform:/resource/mdpa.gdpr.metamodel/model/GDPR.ecore</semanticResources>
+    <semanticResources>platform:/resource/mdpa.gdpr.metamodel.contextproperties/model/contextproperties.ecore</semanticResources>
+    <semanticResources>platform:/resource/mdpa.gdpr.metamodel/model/GDPR.genmodel</semanticResources>
+    <semanticResources>platform:/resource/mdpa.gdpr.metamodel.contextproperties/model/contextproperties.genmodel</semanticResources>
+    <semanticResources>LegalNormRule2222s.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_tTCqIOUWEe2DF-bjTK-2JA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tTsKYOUWEe2DF-bjTK-2JA" name="LegalNormRules" repPath="#_tTpHEOUWEe2DF-bjTK-2JA" changeId="2f567fa7-7a23-40d7-ad7d-82a131febbb1">
@@ -302,8 +307,8 @@
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_A7qPgOUXEe2DF-bjTK-2JA" name="Prerequisit" tooltipText="" incomingEdges="_MCuqkOUXEe2DF-bjTK-2JA _MmrsNuUXEe2DF-bjTK-2JA _NPCFrOUXEe2DF-bjTK-2JA _PmwK8OUXEe2DF-bjTK-2JA _boKHUOUXEe2DF-bjTK-2JA" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="LegalNormRules.ecore#//Prerequisit"/>
-      <semanticElements xmi:type="ecore:EClass" href="LegalNormRules.ecore#//Prerequisit"/>
+      <target xmi:type="ecore:EPackage" href="LegalNormRules.ecore#//Prerequisit"/>
+      <semanticElements xmi:type="ecore:EPackage" href="LegalNormRules.ecore#//Prerequisit"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_A7q2kOUXEe2DF-bjTK-2JA" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
