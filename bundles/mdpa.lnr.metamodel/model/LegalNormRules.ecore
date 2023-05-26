@@ -6,45 +6,42 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="legalobligation" lowerBound="1"
         upperBound="-1" eType="#//LegalObligation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="prerequisit" lowerBound="1"
-        eType="#//Prerequisit/Prerequisit"/>
+        eType="#//Prerequisit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LegalObligation" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity"/>
   <eClassifiers xsi:type="ecore:EClass" name="LegalNormRules" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="legalconsequence" lowerBound="1"
         upperBound="-1" eType="#//LegalConsequence" containment="true"/>
   </eClassifiers>
-  <eSubpackages name="Prerequisit" nsURI="http://www.example.org/LegalNormRules/Prerequisit"
-      nsPrefix="Prerequisit">
-    <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true" interface="true"
-        eSuperTypes="#//Prerequisit/Prerequisit">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="prerequisit" lowerBound="1"
-          upperBound="2" eType="#//Prerequisit/Prerequisit"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//Prerequisit/ContextPrerequisit">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="presumedState" lowerBound="1"
-          eType="ecore:EClass ../../mdpa.gdpr.metamodel/model/GDPR.ecore#//AbstractGDPRElement"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ContextDependentProperty" eSuperTypes="#//Prerequisit/ContextPrerequisit">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="propertyValue" lowerBound="1"
-          eType="ecore:EClass ../../mdpa.gdpr.metamodel.contextproperties/model/contextproperties.ecore#//PropertyValue"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="NOT" eSuperTypes="#//Prerequisit/Prerequisit">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="negatedPrerequisit" lowerBound="1"
-          eType="#//Prerequisit/Prerequisit"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AND" eSuperTypes="#//Prerequisit/Connector"/>
-    <eClassifiers xsi:type="ecore:EClass" name="OR" eSuperTypes="#//Prerequisit/Connector"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Prerequisit" abstract="true" interface="true"
-        eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity"/>
-    <eClassifiers xsi:type="ecore:EClass" name="PresumedGDPRElementProvider" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="presumedGDPRElement"
-          upperBound="-1" eType="ecore:EClass ../../mdpa.gdpr.metamodel/model/GDPR.ecore#//AbstractGDPRElement"
-          containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ContextPrerequisit" abstract="true"
-        interface="true" eSuperTypes="#//Prerequisit/Prerequisit">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="referenceElement" lowerBound="1"
-          eType="ecore:EClass ../../mdpa.gdpr.metamodel/model/GDPR.ecore#//AbstractGDPRElement"/>
-    </eClassifiers>
-  </eSubpackages>
+  <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true" interface="true"
+      eSuperTypes="#//Prerequisit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="prerequisit" lowerBound="1"
+        upperBound="2" eType="#//Prerequisit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//ContextPrerequisit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="presumedState" lowerBound="1"
+        eType="ecore:EClass ../../mdpa.gdpr.metamodel/model/GDPR.ecore#//AbstractGDPRElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextDependentProperty" eSuperTypes="#//ContextPrerequisit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyValue" lowerBound="1"
+        eType="ecore:EClass ../../mdpa.gdpr.metamodel.contextproperties/model/contextproperties.ecore#//PropertyValue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NOT" eSuperTypes="#//Prerequisit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="negatedPrerequisit" lowerBound="1"
+        eType="#//Prerequisit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AND" eSuperTypes="#//Connector"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OR" eSuperTypes="#//Connector"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Prerequisit" abstract="true" interface="true"
+      eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PresumedGDPRElementProvider" eSuperTypes="../../tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="presumedGDPRElement" upperBound="-1"
+        eType="ecore:EClass ../../mdpa.gdpr.metamodel/model/GDPR.ecore#//AbstractGDPRElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextPrerequisit" abstract="true"
+      interface="true" eSuperTypes="#//Prerequisit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceElement" lowerBound="1"
+        eType="ecore:EClass ../../mdpa.gdpr.metamodel/model/GDPR.ecore#//AbstractGDPRElement"/>
+  </eClassifiers>
 </ecore:EPackage>

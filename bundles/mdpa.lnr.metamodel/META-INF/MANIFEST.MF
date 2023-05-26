@@ -9,9 +9,6 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: mdpa.lnr.metamodel.LegalNormRules,
- mdpa.lnr.metamodel.LegalNormRules.Prerequisit,
- mdpa.lnr.metamodel.LegalNormRules.Prerequisit.impl,
- mdpa.lnr.metamodel.LegalNormRules.Prerequisit.util,
  mdpa.lnr.metamodel.LegalNormRules.impl,
  mdpa.lnr.metamodel.LegalNormRules.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,

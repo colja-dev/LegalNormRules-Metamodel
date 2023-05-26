@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    modelDirectory="/mdpa.lnr.metamodel/src-gen" creationIcons="false"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/mdpa.lnr.metamodel/src-gen" creationIcons="false"
     editDirectory="/mdpa.lnr.metamodel.edit/src-gen" editorDirectory="/mdpa.lnr.metamodel.editor/src-gen"
     modelPluginID="mdpa.lnr.metamodel" modelName="LegalNormRules" editPluginClass="mdpa.lnr.metamodel.provider.LegalNormRulesEditPlugin"
     editorPluginClass="mdpa.lnr.metamodel.presentation.LegalNormRulesEditorPlugin"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" suppressEMFTypes="true"
-    reflectiveDelegation="true" codeFormatting="true" testSuiteClass="mdpa.lnr.metamodel.tests.LegalNormRulesAllTests"
-    importerID="org.eclipse.emf.importer.ecore" featureDelegation="Reflective" complianceLevel="5.0"
-    copyrightFields="false" usedGenPackages="../../mdpa.gdpr.metamodel.contextproperties/model/contextproperties.genmodel#//contextproperties ../../mdpa.gdpr.metamodel/model/GDPR.genmodel#//GDPR ../../tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier"
-    operationReflection="true" importOrganizing="true">
+    reflectiveDelegation="true" codeFormatting="true" testsDirectory="/mdpa.lnr.metamodel.tests/src-gen"
+    testSuiteClass="mdpa.lnr.metamodel.tests.LegalNormRulesAllTests" importerID="org.eclipse.emf.importer.ecore"
+    featureDelegation="Reflective" complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../mdpa.gdpr.metamodel.contextproperties/model/contextproperties.genmodel#//contextproperties ../../mdpa.gdpr.metamodel/model/GDPR.genmodel#//GDPR ../../tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier"
+    operationReflection="true" importOrganizing="true" pluginKey="LegalNormRules">
   <foreignModel>LegalNormRules.ecore</foreignModel>
-  <testsDirectory xsi:nil="true"/>
   <genPackages prefix="LegalNormRules" basePackage="mdpa.lnr.metamodel" disposableProviderFactory="true"
       extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="LegalNormRules.ecore#/">
     <genClasses ecoreClass="LegalNormRules.ecore#//LegalConsequence">
@@ -22,29 +20,26 @@
     <genClasses ecoreClass="LegalNormRules.ecore#//LegalNormRules">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegalNormRules.ecore#//LegalNormRules/legalconsequence"/>
     </genClasses>
-    <nestedGenPackages prefix="Prerequisit" disposableProviderFactory="true" ecorePackage="LegalNormRules.ecore#//Prerequisit">
-      <genClasses ecoreClass="LegalNormRules.ecore#//Prerequisit/Connector">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference LegalNormRules.ecore#//Prerequisit/Connector/prerequisit"/>
-      </genClasses>
-      <genClasses ecoreClass="LegalNormRules.ecore#//Prerequisit/Attribute">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference LegalNormRules.ecore#//Prerequisit/Attribute/presumedState"/>
-      </genClasses>
-      <genClasses ecoreClass="LegalNormRules.ecore#//Prerequisit/ContextDependentProperty">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference LegalNormRules.ecore#//Prerequisit/ContextDependentProperty/propertyValue"/>
-      </genClasses>
-      <genClasses ecoreClass="LegalNormRules.ecore#//Prerequisit/NOT"/>
-      <genClasses ecoreClass="LegalNormRules.ecore#//Prerequisit/AND"/>
-      <genClasses ecoreClass="LegalNormRules.ecore#//Prerequisit/OR"/>
-      <genClasses ecoreClass="LegalNormRules.ecore#//Prerequisit/Prerequisit">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference LegalNormRules.ecore#//Prerequisit/Prerequisit/referenceElement"/>
-      </genClasses>
-      <genClasses ecoreClass="LegalNormRules.ecore#//Prerequisit/PresumedGDPRElementProvider">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegalNormRules.ecore#//Prerequisit/PresumedGDPRElementProvider/presumedGDPRElement"/>
-      </genClasses>
-    </nestedGenPackages>
+    <genClasses image="false" ecoreClass="LegalNormRules.ecore#//Connector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LegalNormRules.ecore#//Connector/prerequisit"/>
+    </genClasses>
+    <genClasses ecoreClass="LegalNormRules.ecore#//Attribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LegalNormRules.ecore#//Attribute/presumedState"/>
+    </genClasses>
+    <genClasses ecoreClass="LegalNormRules.ecore#//ContextDependentProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LegalNormRules.ecore#//ContextDependentProperty/propertyValue"/>
+    </genClasses>
+    <genClasses ecoreClass="LegalNormRules.ecore#//NOT">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LegalNormRules.ecore#//NOT/negatedPrerequisit"/>
+    </genClasses>
+    <genClasses ecoreClass="LegalNormRules.ecore#//AND"/>
+    <genClasses ecoreClass="LegalNormRules.ecore#//OR"/>
+    <genClasses image="false" ecoreClass="LegalNormRules.ecore#//Prerequisit"/>
+    <genClasses ecoreClass="LegalNormRules.ecore#//PresumedGDPRElementProvider">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegalNormRules.ecore#//PresumedGDPRElementProvider/presumedGDPRElement"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="LegalNormRules.ecore#//ContextPrerequisit">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LegalNormRules.ecore#//ContextPrerequisit/referenceElement"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

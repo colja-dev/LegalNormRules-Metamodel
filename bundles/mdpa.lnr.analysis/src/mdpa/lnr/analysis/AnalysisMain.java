@@ -23,15 +23,15 @@ import mdpa.gdpr.metamodel.contextproperties.ContextDefinition;
 import mdpa.gdpr.metamodel.contextproperties.PropertyAnnotation;
 import mdpa.lnr.metamodel.LegalNormRules.LegalConsequence;
 import mdpa.lnr.metamodel.LegalNormRules.LegalNormRules;
+import mdpa.lnr.metamodel.LegalNormRules.LegalNormRulesFactory;
 import mdpa.lnr.metamodel.LegalNormRules.LegalObligation;
-import mdpa.lnr.metamodel.LegalNormRules.Prerequisit.AND;
-import mdpa.lnr.metamodel.LegalNormRules.Prerequisit.Attribute;
-import mdpa.lnr.metamodel.LegalNormRules.Prerequisit.Connector;
-import mdpa.lnr.metamodel.LegalNormRules.Prerequisit.ContextDependentProperty;
-import mdpa.lnr.metamodel.LegalNormRules.Prerequisit.NOT;
-import mdpa.lnr.metamodel.LegalNormRules.Prerequisit.OR;
-import mdpa.lnr.metamodel.LegalNormRules.Prerequisit.Prerequisit;
-import mdpa.lnr.metamodel.LegalNormRules.Prerequisit.PrerequisitFactory;
+import mdpa.lnr.metamodel.LegalNormRules.AND;
+import mdpa.lnr.metamodel.LegalNormRules.Attribute;
+import mdpa.lnr.metamodel.LegalNormRules.Connector;
+import mdpa.lnr.metamodel.LegalNormRules.ContextDependentProperty;
+import mdpa.lnr.metamodel.LegalNormRules.NOT;
+import mdpa.lnr.metamodel.LegalNormRules.OR;
+import mdpa.lnr.metamodel.LegalNormRules.Prerequisit;
 
 public class AnalysisMain {
 
@@ -110,7 +110,7 @@ public class AnalysisMain {
 	private List<Prerequisit> createNegatedRule(List<Prerequisit> toBeNegatedRule) {
 		List<Prerequisit> negatedRule = new ArrayList<>();
 		for(Prerequisit toBeNegatedPrerequisit : toBeNegatedRule) {
-			NOT negatedPrerequisit = PrerequisitFactory.eINSTANCE.createNOT();
+			NOT negatedPrerequisit = LegalNormRulesFactory.eINSTANCE.createNOT();
 			negatedPrerequisit.setNegatedPrerequisit(toBeNegatedPrerequisit);
 			negatedRule.add(negatedPrerequisit);
 		}

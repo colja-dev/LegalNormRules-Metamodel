@@ -14,12 +14,4 @@
             genModel="model/LegalNormRules.genmodel"/>
    </extension>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated LegalNormRules -->
-      <package
-            uri="http://www.example.org/LegalNormRules/Prerequisit"
-            class="mdpa.lnr.metamodel.LegalNormRules.Prerequisit.PrerequisitPackage"
-            genModel="model/LegalNormRules.genmodel"/>
-   </extension>
-
 </plugin>

@@ -21,12 +21,29 @@ Workflow {
 			from = "platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.ecore"
 			to = "platform:/resource/tools.mdsd.modelingfoundations.identifier/model/identifier.ecore"
 		}
+		uriMap = {
+			from = "platform:/plugin/mdpa.gdpr.metamodel/model/GDPR.genmodel"
+			to = "platform:/resource/mdpa.gdpr.metamodel/model/GDPR.genmodel"
+		}
+		uriMap = {
+			from = "platform:/plugin/mdpa.gdpr.metamodel/model/GDPR.ecore"
+			to = "platform:/resource/mdpa.gdpr.metamodel/model/GDPR.ecore"
+		}
+		uriMap = {
+			from = "platform:/plugin/mdpa.gdpr.metamodel.contextproperties/model/contextproperties.genmodel"
+			to = "platform:/resource/mdpa.gdpr.metamodel.contextproperties/model/contextproperties.genmodel"
+		}
+		uriMap = {
+			from = "platform:/plugin/mdpa.gdpr.metamodel.contextproperties/model/contextproperties.ecore"
+			to = "platform:/resource/mdpa.gdpr.metamodel.contextproperties/model/contextproperties.ecore"
+		}
 	}
 
 	component = EcoreGenerator {
 		generateCustomClasses = false
 		generateEdit = true
 		generateEditor = true
+		
 		genModel = "platform:/resource/mdpa.lnr.metamodel/model/LegalNormRules.genmodel"
 		srcPath = "platform:/resource/mdpa.lnr.metamodel/src-gen"
 		srcPath = "platform:/resource/mdpa.lnr.metamodel.edit/src-gen"

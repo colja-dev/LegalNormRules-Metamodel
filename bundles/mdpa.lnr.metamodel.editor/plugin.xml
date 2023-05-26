@@ -34,32 +34,4 @@
       </editor>
    </extension>
 
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated LegalNormRules -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="mdpa.lnr.metamodel.LegalNormRules.Prerequisit.presentation.PrerequisitModelWizardID"
-            name="%_UI_PrerequisitModelWizard_label"
-            class="mdpa.lnr.metamodel.LegalNormRules.Prerequisit.presentation.PrerequisitModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/PrerequisitModelFile.gif">
-         <description>%_UI_PrerequisitModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated LegalNormRules -->
-      <editor
-            id="mdpa.lnr.metamodel.LegalNormRules.Prerequisit.presentation.PrerequisitEditorID"
-            name="%_UI_PrerequisitEditor_label"
-            icon="icons/full/obj16/PrerequisitModelFile.gif"
-            extensions="prerequisit"
-            class="mdpa.lnr.metamodel.LegalNormRules.Prerequisit.presentation.PrerequisitEditor"
-            contributorClass="mdpa.lnr.metamodel.LegalNormRules.Prerequisit.presentation.PrerequisitActionBarContributor">
-      </editor>
-   </extension>
-
 </plugin>
