@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: LNR Api
+Bundle-SymbolicName: mdpa.lnr.metamodel.api
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.common,
+ mdpa.lnr.metamodel,
+ tools.mdsd.library.standalone.initialization
+Automatic-Module-Name: mdpa.lnr.metamodel.api
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: mdpa.lnr.metamodel.api

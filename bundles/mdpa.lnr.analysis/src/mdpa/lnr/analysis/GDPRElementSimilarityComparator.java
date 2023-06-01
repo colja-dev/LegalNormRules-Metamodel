@@ -25,11 +25,11 @@ import mdpa.gdpr.metamodel.api.GDPRMetamodelApi;
  * @author Nicolas Boltz
  *
  */
-public class GDPRElementComparator {
+public class GDPRElementSimilarityComparator {
 
 	private GDPRMetamodelApi GDPRApi;
 
-	public GDPRElementComparator(GDPRMetamodelApi api) {
+	public GDPRElementSimilarityComparator(GDPRMetamodelApi api) {
 		this.GDPRApi = api;
 	}
 	

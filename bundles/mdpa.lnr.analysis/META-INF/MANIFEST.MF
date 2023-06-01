@@ -5,6 +5,7 @@ Bundle-SymbolicName: mdpa.lnr.analysis
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: mdpa.lnr.metamodel,
  mdpa.gdpr.metamodel.contextproperties,
- mdpa.gdpr.metamodel.api
+ mdpa.gdpr.metamodel.api,
+ mdpa.lnr.metamodel.api
 Automatic-Module-Name: mdpa.lnr.analysis
 Bundle-RequiredExecutionEnvironment: JavaSE-17
