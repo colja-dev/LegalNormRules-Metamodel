@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Analysis
 Bundle-SymbolicName: mdpa.lnr.analysis
 Bundle-Version: 1.0.0.qualifier
+Export-Package: mdpa.lnr.analysis
 Require-Bundle: mdpa.lnr.metamodel,
  mdpa.gdpr.metamodel.contextproperties,
  mdpa.gdpr.metamodel.api,

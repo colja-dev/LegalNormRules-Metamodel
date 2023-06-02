@@ -24,13 +24,16 @@ public class LegalNormRulesApi {
 	
 	private LegalNormRules lnr;
 	
-	public LegalNormRulesApi(String gdprModelPath) {
+	public LegalNormRulesApi(URI lnrModelURI) {
 		if(EMFPlugin.IS_ECLIPSE_RUNNING) {
 			initStandalone();
 		}
 		
-		loadLNRModel(gdprModelPath);
+		System.out.println("Loading legal norm rules model instance at " + lnrModelURI.path());
+		loadLNRModel(lnrModelURI);
 		
+		//this could result in an error when loading the other models after
+		System.out.println("Resolving resources.");
 		resolveResources();
 	}
 	
@@ -38,9 +41,7 @@ public class LegalNormRulesApi {
 		return this.lnr;
 	}
 	
-	private void loadLNRModel(String lnrModelPath) {
-		URI lnrModelURI = createRelativePluginURIFromAbsolutePath(lnrModelPath);
-
+	private void loadLNRModel(URI lnrModelURI) {
 		this.lnr = (LegalNormRules) this.loadResource(lnrModelURI);		
 	}
 	

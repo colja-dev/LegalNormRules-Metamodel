@@ -29,6 +29,7 @@ public class LNRElementEvaluator {
 	}
 	
 	public boolean checkRules(List<List<Prerequisit>> disjunctRules) {
+		System.out.println("Checking " + disjunctRules.size() + " disjunct rules.");
 		for (List<Prerequisit> rule : disjunctRules) {
 			boolean ruleMet = true;
 			List<Prerequisit> contextDependentProperties = new ArrayList<>();
@@ -38,6 +39,7 @@ public class LNRElementEvaluator {
 				} else {
 					if(!checkIndependentPrerequisit(prerequisit)) {
 						ruleMet = false;
+						System.out.println("Context independent prerequisit " + prerequisit.getEntityName() + " not met, checking next rule.");
 						break;
 					}
 				}
@@ -49,15 +51,18 @@ public class LNRElementEvaluator {
 					//TODO: check whether this if is right
 					if(!checkContextDependentPrerequisit(cdp, rule)) {
 						ruleMet = false;
+						System.out.println("Context dependent prerequisit " + cdp.getEntityName() + " not met, checking next rule.");
 						break;
 					}
 				}
 			}
 			if(ruleMet) { // If a rule is completely met, skip checking the remaining rules and return
+				System.out.println("All prerequisits of a rule are met, skip checking remaining rules.");
 				return true;
 			}
 		}
 		// No rule is met
+		System.out.println("No rule was met.");
 		return false;
 	}
 	
@@ -90,12 +95,15 @@ public class LNRElementEvaluator {
 		
 		if (prerequisit instanceof AND) {
 			AND and = (AND) prerequisit;
+			System.out.println("Traversing AND with ." + and.getPrerequisit().size() + " prerequisits.");
+
 			for (Prerequisit andPrerequisit : and.getPrerequisit()) {
 				flattenRuleTree(andPrerequisit, disjunctRules);
 			}
 		
 		} else if (prerequisit instanceof OR) {
 			OR or = (OR) prerequisit;
+			System.out.println("Traversing OR with ." + or.getPrerequisit().size() + " prerequisits.");
 			ArrayList<List<Prerequisit>> newDisjunctRuleSets = new ArrayList<>();
 			for(int i = 1; i < or.getPrerequisit().size(); i++) { // skip the first disjunction as it does not require cloning.
 				ArrayList<List<Prerequisit>> newDisjunctRuleSet = (ArrayList<List<Prerequisit>>) disjunctRules.clone();
@@ -107,6 +115,7 @@ public class LNRElementEvaluator {
 			
 		} else if ( prerequisit instanceof NOT) {
 			NOT not = (NOT) prerequisit;
+			System.out.println("Traversing negated branch...");
 			ArrayList<List<Prerequisit>> toBeNegatedDisjunctRuleSet = new ArrayList<>();
 			flattenRuleTree(not.getNegatedPrerequisit(), toBeNegatedDisjunctRuleSet);
 			ArrayList<List<Prerequisit>> newDisjunctRuleSets = new ArrayList<>();
@@ -126,10 +135,13 @@ public class LNRElementEvaluator {
 			disjunctRules.addAll(newDisjunctRuleSets);
 			
 		} else { // Attribute, ContextDependentProperty
+			System.out.println("Traversing Attribute or ContextDependentProperty...");
 			for (List<Prerequisit> disjunctRule : disjunctRules) {
 				disjunctRule.add(prerequisit);
 			}
 		}
+		System.out.println("Finished traversing current prerequisit, advancing to previous prerequisit.");
+
 	}
 	
 	private List<Prerequisit> createNegatedRule(List<Prerequisit> toBeNegatedRule) {
@@ -168,13 +180,16 @@ public class LNRElementEvaluator {
 				if (contextAnnotation.getPropertyvalue().contains(contextDependentProperty.getPropertyValue())) {
 					// first compare the GDPR-Elements of the context and then the other referenced context annotations
 					for (ContextDefinition contextDefinition : contextAnnotation.getContextdefinition()) {
+						System.out.println("Comparing context definition of annotation to the given context...");
 						if (compareContextDefinitionToContext(contextDefinition, context)) {
+							System.out.println("Found a matching context dependent property annotation for the given context.");
 							return true;
 						}
 					}
 				}
 			}
 		}
+		System.out.println("Could not find a matching context dependent property annotation for the given context.");
 		return false;
 	}
 	
@@ -279,11 +294,13 @@ public class LNRElementEvaluator {
 	}
 	
 	private boolean checkIndependentPrerequisit(Attribute attribute) {
+		System.out.println("Checking attribute " + attribute.getEntityName());
 		return comparator.compareGDPRElements(attribute.getReferenceElement(), attribute.getPresumedState());
 	}
 	
 	private boolean checkContextDependentPrerequisit(ContextDependentProperty contextDependentProperty, List<Prerequisit> context) {		
 		// Get all annotations of the referenced element
+		System.out.println("Checking context dependent property " + contextDependentProperty.getEntityName());
 		List<PropertyAnnotation> annotations = GDPRApi.getPropertyAnnotations(contextDependentProperty.getReferenceElement());
 		for (PropertyAnnotation propertyAnnotation : annotations) {
 			if(comparePropertyAnnotationAndContextDependentProperty(propertyAnnotation, contextDependentProperty, context)) {
@@ -295,10 +312,12 @@ public class LNRElementEvaluator {
 	}
 	
 	private boolean checkContextDependentPrerequisit(NOT not, List<Prerequisit> context) {
+		System.out.println("Checking negated prerequisit.");
 		return !checkContextDependentPrerequisit(not.getNegatedPrerequisit(), context);
 	}
 	
 	private boolean checkIndependentPrerequisit(NOT not) {
+		System.out.println("Checking negated prerequisit.");
 		return !checkIndependentPrerequisit(not.getNegatedPrerequisit());
 	}
 

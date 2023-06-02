@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: LNR Analysis Tests
+Bundle-SymbolicName: mdpa.lnr.analysis.tests
+Bundle-Version: 1.0.0.qualifier
+Import-Package: org.eclipse.emf.common.util
+Require-Bundle: org.junit,
+ junit-jupiter-api,
+ mdpa.lnr.analysis,
+ mdpa.gdpr.metamodel;bundle-version="0.1.0",
+ mdpa.gdpr.metamodel.contextproperties;bundle-version="0.1.0",
+ mdpa.lnr.metamodel;bundle-version="0.1.0",
+ org.eclipse.emf.ecore.xmi,
+ tools.mdsd.library.standalone.initialization,
+ mdpa.gdpr.metamodel.api
+Automatic-Module-Name: mdpa.lnr.analysis.tests
+Bundle-RequiredExecutionEnvironment: JavaSE-17
