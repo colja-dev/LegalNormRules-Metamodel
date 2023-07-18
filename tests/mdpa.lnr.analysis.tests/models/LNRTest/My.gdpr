@@ -1,2 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GDPR:LegalAssessmentFacts xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:GDPR="http://www.example.org/GDPR" id="_7DeNoP8AEe2kDemF2aGupQ"/>
+<GDPR:LegalAssessmentFacts xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:GDPR="http://www.example.org/GDPR" id="_7DeNoP8AEe2kDemF2aGupQ">
+  <processing xsi:type="GDPR:Collection" id="_0854cQhKEe67tpwR5G7Ipg" entityName="RegisterCustomer" outputData="_txHKtwhLEe67tpwR5G7Ipg" purpose="_DHrfpQhMEe67tpwR5G7Ipg _JSxI5QhMEe67tpwR5G7Ipg" followingProcessing="_6JfSEAhKEe67tpwR5G7Ipg _XxG3NAhLEe67tpwR5G7Ipg"/>
+  <processing id="_6JfSEAhKEe67tpwR5G7Ipg" entityName="Pseudonymization" inputData="_txHKtwhLEe67tpwR5G7Ipg" outputData="_4g-mtwhLEe67tpwR5G7Ipg" purpose="_JSxI5QhMEe67tpwR5G7Ipg" followingProcessing="_AJYX8ghLEe67tpwR5G7Ipg"/>
+  <processing xsi:type="GDPR:Transfering" id="_AJYX8ghLEe67tpwR5G7Ipg" entityName="TransferToStatisticsProvider" inputData="_4g-mtwhLEe67tpwR5G7Ipg" outputData="_4g-mtwhLEe67tpwR5G7Ipg" purpose="_JSxI5QhMEe67tpwR5G7Ipg" followingProcessing="_cWKWwwhLEe67tpwR5G7Ipg"/>
+  <processing xsi:type="GDPR:Storing" id="_XxG3NAhLEe67tpwR5G7Ipg" entityName="BankStoreCustomerData" inputData="_txHKtwhLEe67tpwR5G7Ipg" purpose="_DHrfpQhMEe67tpwR5G7Ipg"/>
+  <processing xsi:type="GDPR:Useage" id="_cWKWwwhLEe67tpwR5G7Ipg" entityName="StatisticsProviderCalculateStatistics" inputData="_4g-mtwhLEe67tpwR5G7Ipg" outputData="_4g-mtwhLEe67tpwR5G7Ipg" purpose="_JSxI5QhMEe67tpwR5G7Ipg" followingProcessing="_fQEjJAhLEe67tpwR5G7Ipg"/>
+  <processing xsi:type="GDPR:Storing" id="_fQEjJAhLEe67tpwR5G7Ipg" entityName="StatisticsProviderStoreData" inputData="_4g-mtwhLEe67tpwR5G7Ipg" purpose="_JSxI5QhMEe67tpwR5G7Ipg"/>
+  <purposes id="_DHrfpQhMEe67tpwR5G7Ipg" entityName="CreateAccount" decidedOver="_UvHiUQhKEe67tpwR5G7Ipg"/>
+  <purposes id="_JSxI5QhMEe67tpwR5G7Ipg" entityName="CreateStatistics" decidedOver="_UvHiUQhKEe67tpwR5G7Ipg"/>
+  <data xsi:type="GDPR:PersonalData" id="_txHKtwhLEe67tpwR5G7Ipg" entityName="CustomerBankData" references="_vnprDAhKEe67tpwR5G7Ipg"/>
+  <data xsi:type="GDPR:PersonalData" id="_4g-mtwhLEe67tpwR5G7Ipg" entityName="PseudonymizedCustomerBankData" references="_vnprDAhKEe67tpwR5G7Ipg"/>
+  <legalBases xsi:type="GDPR:PerformanceOfContract" id="_Z2O7NAhMEe67tpwR5G7Ipg" entityName="AccountContract" personaldata="_txHKtwhLEe67tpwR5G7Ipg" contractingParty="_vnprDAhKEe67tpwR5G7Ipg _UvHiUQhKEe67tpwR5G7Ipg"/>
+  <legalBases xsi:type="GDPR:Consent" id="_kdCh2whMEe67tpwR5G7Ipg" entityName="StatisticsConsent" personaldata="_txHKtwhLEe67tpwR5G7Ipg" definedPurpose="_JSxI5QhMEe67tpwR5G7Ipg" proof="_xcurYAhMEe67tpwR5G7Ipg" consending="_vnprDAhKEe67tpwR5G7Ipg"/>
+  <involvedParties xsi:type="GDPR:Controller" id="_UvHiUQhKEe67tpwR5G7Ipg" entityName="Bank" name="Bank">
+    <proof id="_xcurYAhMEe67tpwR5G7Ipg" entityName="ProofOfCustomerConsentForStatistics" consent="_kdCh2whMEe67tpwR5G7Ipg"/>
+  </involvedParties>
+  <involvedParties xsi:type="GDPR:ThirdParty" id="_tAgprghKEe67tpwR5G7Ipg" entityName="StatisticsProvider" name="StatisticsProvider"/>
+  <involvedParties xsi:type="GDPR:NaturalPerson" id="_vnprDAhKEe67tpwR5G7Ipg" entityName="Customer" name="Customer"/>
+</GDPR:LegalAssessmentFacts>
