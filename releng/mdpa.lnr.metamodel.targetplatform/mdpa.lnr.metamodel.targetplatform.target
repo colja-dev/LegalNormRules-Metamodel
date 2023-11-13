@@ -76,7 +76,7 @@
 			<unit id="mdpa.gdpr.metamodel.feature.feature.group" version="0.0.0"/>
 			<unit id="mdpa.gdpr.metamodel.contextproperties.feature.feature.group" version="0.0.0"/>
 			<unit id="mdpa.gdpr.metamodel.api.feature.feature.group" version="0.0.0"/>
-			<repository location="https://dataflowanalysis.github.io/updatesite/nightly/gdpr-metamodel/"/>
+			<repository location="https://model-based-data-protection-assessments.github.io/updatesite/nightly/gdpr-metamodel/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<unit id="tools.mdsd.library.standalone.initialization" version="0.0.0"/>
