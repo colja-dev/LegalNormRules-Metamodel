@@ -6,7 +6,7 @@ import java.util.List;
 import mdpa.gdpr.metamodel.GDPR.AbstractGDPRElement;
 import mdpa.gdpr.metamodel.GDPR.Consent;
 import mdpa.gdpr.metamodel.GDPR.Data;
-import mdpa.gdpr.metamodel.GDPR.ExerciceOfPublicAuthrity;
+import mdpa.gdpr.metamodel.GDPR.ExerciseOfPublicAuthority;
 import mdpa.gdpr.metamodel.GDPR.LegalBasis;
 import mdpa.gdpr.metamodel.GDPR.PerformanceOfContract;
 import mdpa.gdpr.metamodel.GDPR.PersonalData;
@@ -88,8 +88,8 @@ public class GDPRElementSimilarityComparator {
 			List<? extends LegalBasis> containedLegalBasisEquivalents = new ArrayList<>();
 			if(containedBasis instanceof PerformanceOfContract) {
 				containedLegalBasisEquivalents = findEquivalentsInGDPRModel((PerformanceOfContract) containedBasis);
-			} else if(containedBasis instanceof ExerciceOfPublicAuthrity) {
-				containedLegalBasisEquivalents = findEquivalentsInGDPRModel((ExerciceOfPublicAuthrity) containedBasis);
+			} else if(containedBasis instanceof ExerciseOfPublicAuthority) {
+				containedLegalBasisEquivalents = findEquivalentsInGDPRModel((ExerciseOfPublicAuthority) containedBasis);
 			} else if(containedBasis instanceof Consent) {
 				containedLegalBasisEquivalents = findEquivalentsInGDPRModel((Consent) containedBasis);
 			}
@@ -196,11 +196,11 @@ public class GDPRElementSimilarityComparator {
 		return equivalents;
 	}
 
-	private List<ExerciceOfPublicAuthrity> findEquivalentsInGDPRModel(ExerciceOfPublicAuthrity presumedBasis) {
-		List<ExerciceOfPublicAuthrity> equivalents = new ArrayList<>();
+	private List<ExerciseOfPublicAuthority> findEquivalentsInGDPRModel(ExerciseOfPublicAuthority presumedBasis) {
+		List<ExerciseOfPublicAuthority> equivalents = new ArrayList<>();
 		for(LegalBasis basis : GDPRApi.getLegalBases()) {
-			if(basis instanceof ExerciceOfPublicAuthrity) {
-				ExerciceOfPublicAuthrity exerciceOfPublicAuthrity = (ExerciceOfPublicAuthrity) basis;
+			if(basis instanceof ExerciseOfPublicAuthority) {
+				ExerciseOfPublicAuthority exerciceOfPublicAuthrity = (ExerciseOfPublicAuthority) basis;
 				if(compareLegalBasis(exerciceOfPublicAuthrity, presumedBasis)) {
 					equivalents.add(exerciceOfPublicAuthrity);
 				}
@@ -273,7 +273,6 @@ public class GDPRElementSimilarityComparator {
 
 	private boolean comparePurpose(Purpose element, Purpose presumedElement) {
 		if (element.getId().equals(presumedElement.getId()) || 
-				compareRole(element.getDecidedOver(), presumedElement.getDecidedOver()) && 
 				element.getEntityName().equals(presumedElement.getEntityName())) {
 			return true;
 		}
@@ -287,7 +286,7 @@ public class GDPRElementSimilarityComparator {
 			return compareConsent((Consent) basis, (Consent) presumedBasis);
 		} else {
 			if (compareAbstractGDPRElements(basis, presumedBasis) || 
-					comparePersonalData(basis.getPersonaldata(), presumedBasis.getPersonaldata())) {
+					comparePersonalData(basis.getPersonalData(), presumedBasis.getPersonalData())) {
 				return true;
 			}
 			return false;
@@ -297,7 +296,7 @@ public class GDPRElementSimilarityComparator {
 	private boolean comparePerformanceOfContract(PerformanceOfContract basis, PerformanceOfContract presumedBasis) {
 		if (compareAbstractGDPRElements(basis, presumedBasis) || 
 				(checkInvolvedPartyContainment(basis.getContractingParty(), presumedBasis.getContractingParty()) && 
-						comparePersonalData(basis.getPersonaldata(), presumedBasis.getPersonaldata()))) {
+						comparePersonalData(basis.getPersonalData(), presumedBasis.getPersonalData()))) {
 			return true;
 		}
 		return false;
@@ -305,9 +304,9 @@ public class GDPRElementSimilarityComparator {
 
 	private boolean compareConsent(Consent basis, Consent presumedBasis) {
 		if (compareAbstractGDPRElements(basis, presumedBasis) || 
-				(compareRole(basis.getConsending(), presumedBasis.getConsending()) && 
-						comparePersonalData(basis.getPersonaldata(), presumedBasis.getPersonaldata()) &&
-						checkPurposeContainment(basis.getDefinedPurpose(), presumedBasis.getDefinedPurpose()))) {
+				(compareRole(basis.getConsentee(), presumedBasis.getConsentee()) && 
+						comparePersonalData(basis.getPersonalData(), presumedBasis.getPersonalData()) &&
+						checkPurposeContainment(basis.getForPurpose(), presumedBasis.getForPurpose()))) {
 			return true;
 		}
 		return false;
@@ -323,7 +322,7 @@ public class GDPRElementSimilarityComparator {
 
 	private boolean comparePersonalData(PersonalData persData, PersonalData presumedData) {
 		if(compareAbstractGDPRElements(persData, presumedData) || 
-				checkInvolvedPartyContainment(persData.getReferences(), presumedData.getReferences())) {
+				checkInvolvedPartyContainment(persData.getDataReferences(), presumedData.getDataReferences())) {
 			return true;
 		}
 		return false;
